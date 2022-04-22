@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CadastroPage from "./pages/CadastroPage";
+import CadastroPage from "./pages/Cadastro/CadastroPage";
 import LoginPage from "./pages/loginPage";
 
 export default function App() {
