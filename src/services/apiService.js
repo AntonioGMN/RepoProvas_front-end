@@ -17,3 +17,7 @@ function createConfig(token) {
 export function sighUp(user) {
 	return axios.post("http://localhost:4000/sighUp", user);
 }
+
+export function login(user) {
+	return axios.post("http://localhost:4000/login", user);
+}
