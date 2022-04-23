@@ -1,15 +1,14 @@
-import Logo from "../../components/logo";
-import Container from "../../components/conteiner";
-import Centralize from "../../components/centralize";
-import ButtonGit from "../../components/buttonGit";
-import SeparatorLine from "../../components/separatorLine";
-import { Form, Input } from "../../components/form";
+import Logo from "../components/logo";
+import Container from "../components/conteiner";
+import Centralize from "../components/centralize";
+import ButtonGit from "../components/buttonGit";
+import SeparatorLine from "../components/separatorLine";
+import { Form, Input } from "../components/form";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-//import validationDadosCadastrados from "./validation";
-import * as api from "../../services/apiService";
+import * as api from "../services/apiService";
 
-export default function CadastroPage() {
+export default function SighUpPage() {
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
@@ -38,7 +37,7 @@ export default function CadastroPage() {
 		api
 			.sighUp(user)
 			.then(() => {
-				navegate("/");
+				navegate("/login");
 			})
 			.catch((error) => alert(error));
 
@@ -75,7 +74,7 @@ export default function CadastroPage() {
 						onChange={(e) => handlerInput(e)}
 					/>
 					<div>
-						<Link to="/">Já possuo cadastro</Link>
+						<Link to="/login">Já possuo cadastro</Link>
 						<button>CADASTRAR</button>
 					</div>
 				</Form>

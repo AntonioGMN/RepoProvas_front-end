@@ -10,7 +10,7 @@ import * as api from "../services/apiService";
 import { useAuth } from "../contexts/AppContext";
 
 export default function LoginPage() {
-	const { token, manterLogin } = useAuth();
+	const { persistLogin } = useAuth();
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
@@ -36,7 +36,8 @@ export default function LoginPage() {
 			.then((resp) => {
 				const { token } = resp.data;
 				console.log(token);
-				manterLogin(token);
+				persistLogin(token);
+				navegate("/");
 			})
 			.catch((error) => alert(error));
 
@@ -66,7 +67,7 @@ export default function LoginPage() {
 						onChange={(e) => handlerInput(e)}
 					></Input>
 					<div>
-						<Link to="/cadastro">Não possuo cadastro</Link>
+						<Link to="/signUp">Não possuo cadastro</Link>
 						<button>ENTRAR</button>
 					</div>
 				</Form>

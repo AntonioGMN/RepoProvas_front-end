@@ -21,3 +21,8 @@ export function sighUp(user) {
 export function login(user) {
 	return axios.post("http://localhost:4000/login", user);
 }
+
+export function logout(token) {
+	const config = createConfig(token);
+	return axios.delete("http://localhost:4000/logout", config);
+}
