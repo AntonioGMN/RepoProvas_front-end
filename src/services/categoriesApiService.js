@@ -14,7 +14,7 @@ function createConfig(token) {
 	};
 }
 
-export function getTerms(token) {
+export function getCategories(token) {
 	const config = createConfig(token);
-	return instance.get("terms", config);
+	return instance.get("categories", config);
 }

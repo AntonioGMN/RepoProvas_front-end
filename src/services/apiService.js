@@ -3,7 +3,7 @@ import axios from "axios";
 const Base_URL = "http://localhost:4000";
 
 const instance = axios.create({
-	Base_URL,
+	baseURL: Base_URL,
 });
 
 function createConfig(token) {

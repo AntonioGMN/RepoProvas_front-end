@@ -7,6 +7,11 @@ const MainStyle = styled.main`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	position: relative;
+
+	@media (max-width: 800px) {
+		width: 100vw;
+	}
 `;
 
 export default MainStyle;

@@ -5,28 +5,69 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export default function SimpleAccordion({ obj }) {
+export default function SimpleAccordion({
+	terms,
+	disciplines,
+	categories,
+	tests,
+}) {
 	return (
-		<div>
-			{obj.map((item) => {
+		<section>
+			{terms.map((t) => {
 				return (
-					<Accordion>
+					<Accordion key={t.id}>
 						<AccordionSummary
 							expandIcon={<ExpandMoreIcon />}
 							aria-controls="panel1a-content"
 							id="panel1a-header"
+							key={t.id}
+							disableGutters={true}
 						>
-							<Typography>{item.number}</Typography>
+							<Typography>{t.number} Período</Typography>
 						</AccordionSummary>
 						<AccordionDetails>
-							<Typography>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-								malesuada lacus ex, sit amet blandit leo lobortis eget.
-							</Typography>
+							{disciplines.map((d) => {
+								if (t.id === d.termId) {
+									return (
+										<Accordion key={d.id}>
+											<AccordionSummary
+												expandIcon={<ExpandMoreIcon />}
+												aria-controls="panel1a-content"
+												id="panel1a-header"
+											>
+												<Typography>{d.name}</Typography>
+											</AccordionSummary>
+											<AccordionDetails>
+												{categories.map((c) => {
+													return (
+														<di>
+															<p>{c.name}</p>
+															{tests.map((test) => {
+																if (
+																	c.id === test.categoryId &&
+																	d.id === test.teachersDiscipline.discipline.id
+																) {
+																	return (
+																		<div>
+																			<span>
+																				{test.name}({test.teachersDiscipline.teacher.name})
+																			</span>
+																		</div>
+																	);
+																}
+															})}
+														</di>
+													);
+												})}
+											</AccordionDetails>
+										</Accordion>
+									);
+								} else return "";
+							})}
 						</AccordionDetails>
 					</Accordion>
 				);
 			})}
-		</div>
+		</section>
 	);
 }

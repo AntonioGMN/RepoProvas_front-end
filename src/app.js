@@ -3,6 +3,7 @@ import LoginPage from "./pages/loginPage";
 import SighUpPage from "./pages/sighUpPage";
 import ProvasPage from "./pages/provasPage";
 import Context from "./contexts/AppContext";
+import TeachersPage from "./pages/teacherPage";
 import { useState } from "react";
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
 					<Route path="/" element={<ProvasPage />} />
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/signUp" element={<SighUpPage />} />
+					<Route path="/teachers" element={<TeachersPage />} />
 				</Routes>
 			</BrowserRouter>
 		</Context.Provider>

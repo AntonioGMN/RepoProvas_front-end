@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AppContext";
 import * as api from "../services/apiService";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ children }) {
 	const { token } = useAuth();
 	const navegate = useNavigate();
 
@@ -25,32 +25,27 @@ export default function Header() {
 				<Logo />
 				<LogoutIcon onClick={() => logout()} style={{ fontSize: "2em" }} />
 			</div>
-			<input />
-			<hr />
+			{children}
+			<hr></hr>
 		</HeaderStyle>
 	);
 }
 
 const HeaderStyle = styled.header`
 	width: 100%;
+	height: 200px;
+	display: flex;
 	flex-direction: column;
 
 	img {
 		width: 230px;
-		height: 64px;
+		height: 61px;
 	}
 
 	div {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
-	}
-
-	input {
-		width: 230px;
-		align-self: center;
-		border: none;
-		border-radius: 3px;
 	}
 
 	hr {

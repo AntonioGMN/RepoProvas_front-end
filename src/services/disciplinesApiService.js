@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Base_URL = "http://localhost:4000";
+const Base_URL = "http://localhost:4000/";
 
 const instance = axios.create({
 	baseURL: Base_URL,
@@ -14,7 +14,7 @@ function createConfig(token) {
 	};
 }
 
-export function getTerms(token) {
+export function getDisciplines(token) {
 	const config = createConfig(token);
-	return instance.get("terms", config);
+	return instance.get("disciplines", config);
 }

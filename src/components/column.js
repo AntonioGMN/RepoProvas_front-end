@@ -5,6 +5,7 @@ const Column = styled.section`
 
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 `;
 
 export default Column;
