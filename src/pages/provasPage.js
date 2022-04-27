@@ -69,7 +69,13 @@ export default function ProvasPage() {
 	return (
 		<Column>
 			<Header>
-				<Search tests={"Pesquise por disciplina"} />
+				{disciplines !== null && (
+					<Search
+						date={disciplines}
+						setDate={setDisciplines}
+						tests={"Pesquise por disciplina"}
+					/>
+				)}
 			</Header>
 			<MainStyle>
 				<Position>

@@ -47,7 +47,13 @@ export default function TeachersPage() {
 	return (
 		<Column>
 			<Header>
-				<Search tests={"Pesquise por pessoa instrutora"} />
+				{teachers !== null && (
+					<Search
+						date={teachers}
+						setDate={setTeachers}
+						tests={"Pesquise por pessoa instrutora"}
+					/>
+				)}
 			</Header>
 			<MainStyle>
 				<Position>
