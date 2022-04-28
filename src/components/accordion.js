@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ShowTests from "./showTests";
 
 export default function SimpleAccordion({
 	terms,
@@ -16,13 +17,7 @@ export default function SimpleAccordion({
 			{terms.map((t) => {
 				return (
 					<Accordion key={t.id}>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon />}
-							aria-controls="panel1a-content"
-							id="panel1a-header"
-							key={t.id}
-							disableGutters={true}
-						>
+						<AccordionSummary expandIcon={<ExpandMoreIcon />} key={t.id}>
 							<Typography>{t.number} Período</Typography>
 						</AccordionSummary>
 						<AccordionDetails>
@@ -30,17 +25,13 @@ export default function SimpleAccordion({
 								if (t.id === d.termId) {
 									return (
 										<Accordion key={d.id}>
-											<AccordionSummary
-												expandIcon={<ExpandMoreIcon />}
-												aria-controls="panel1a-content"
-												id="panel1a-header"
-											>
+											<AccordionSummary expandIcon={<ExpandMoreIcon />} key={d.id}>
 												<Typography>{d.name}</Typography>
 											</AccordionSummary>
 											<AccordionDetails>
 												{categories.map((c) => {
 													return (
-														<di>
+														<div key={c.id}>
 															<p>{c.name}</p>
 															{tests.map((test) => {
 																if (
@@ -48,15 +39,17 @@ export default function SimpleAccordion({
 																	d.id === test.teachersDiscipline.discipline.id
 																) {
 																	return (
-																		<div>
-																			<span>
-																				{test.name}({test.teachersDiscipline.teacher.name})
-																			</span>
-																		</div>
+																		<ShowTests
+																			key={t.id}
+																			id={test.id}
+																			testName={test.name}
+																			teacherName={test.teachersDiscipline.teacher.name}
+																			originalViews={test.views}
+																		/>
 																	);
 																}
 															})}
-														</di>
+														</div>
 													);
 												})}
 											</AccordionDetails>

@@ -18,3 +18,8 @@ export function getTests(token) {
 	const config = createConfig(token);
 	return instance.get("tests", config);
 }
+
+export function updateViews(id, token) {
+	const config = createConfig(token);
+	return instance.post(`tests/update/${id}`, null, config);
+}
