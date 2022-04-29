@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ShowTests from "./showTests";
 
 export default function TeachersAccordion({ categories, teachers }) {
 	return (
@@ -27,9 +28,13 @@ export default function TeachersAccordion({ categories, teachers }) {
 										{categorie.tests.map((test) => {
 											if (test.teachersDiscipline.teacher.id === teacher.id) {
 												return (
-													<div key={test.id}>
-														<span>{test.name}</span>;
-													</div>
+													<ShowTests
+														key={test.id}
+														id={test.id}
+														testName={test.name}
+														teacherName={test.teachersDiscipline.teacher.name}
+														originalViews={test.views}
+													/>
 												);
 											}
 										})}

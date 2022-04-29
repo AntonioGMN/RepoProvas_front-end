@@ -23,3 +23,8 @@ export function updateViews(id, token) {
 	const config = createConfig(token);
 	return instance.post(`tests/update/${id}`, null, config);
 }
+
+export function create(body, token) {
+	const config = createConfig(token);
+	return instance.post(`tests/create`, body, config);
+}

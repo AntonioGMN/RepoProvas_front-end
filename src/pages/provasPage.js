@@ -88,7 +88,9 @@ export default function ProvasPage() {
 						<Button variant="outlined" onClick={() => navegate("/teachers")}>
 							pessoa instrutora
 						</Button>
-						<Button variant="outlined">adicionar</Button>
+						<Button variant="outlined" onClick={() => navegate("/provas/adicionar")}>
+							adicionar
+						</Button>
 					</Stack>
 					{terms == null ||
 					disciplines == null ||

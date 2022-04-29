@@ -5,6 +5,7 @@ import ProvasPage from "./pages/provasPage";
 import Context from "./contexts/AppContext";
 import TeachersPage from "./pages/teacherPage";
 import { useState } from "react";
+import AdicionarProvaPage from "./pages/newProvaPage";
 
 export default function App() {
 	const persistedToken = JSON.parse(localStorage.getItem("token"));
@@ -31,8 +32,9 @@ export default function App() {
 				<Routes>
 					<Route path="/" element={<ProvasPage />} />
 					<Route path="/login" element={<LoginPage />} />
-					<Route path="/signUp" element={<SighUpPage />} />
+					<Route path="/sighUp" element={<SighUpPage />} />
 					<Route path="/teachers" element={<TeachersPage />} />
+					<Route path="/provas/adicionar" element={<AdicionarProvaPage />} />
 				</Routes>
 			</BrowserRouter>
 		</Context.Provider>

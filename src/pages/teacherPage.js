@@ -71,7 +71,9 @@ export default function TeachersPage() {
 							Disciplinas
 						</Button>
 						<Button variant="contained">pessoa instrutora</Button>
-						<Button variant="outlined">adicionar</Button>
+						<Button variant="outlined" onClick={() => navegate("/provas/adicionar")}>
+							adicionar
+						</Button>
 					</Stack>
 					{categories == null || teachers == null ? (
 						"carregando"

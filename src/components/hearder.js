@@ -53,4 +53,13 @@ const HeaderStyle = styled.header`
 		border: none;
 		border-top: 1px solid #c4c4c4;
 	}
+
+	h1 {
+		font-family: Poppins;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: 0.15000000596046448px;
+		text-align: center;
+	}
 `;

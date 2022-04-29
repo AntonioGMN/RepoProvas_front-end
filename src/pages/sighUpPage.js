@@ -53,6 +53,7 @@ export default function SighUpPage() {
 				<SeparatorLine />
 				<Form onSubmit={hadlerSubmit}>
 					<Input
+						id="email"
 						type="email"
 						placeholder="Email"
 						name="email"
@@ -60,6 +61,7 @@ export default function SighUpPage() {
 						onChange={(e) => handlerInput(e)}
 					/>
 					<Input
+						id="password"
 						type="password"
 						placeholder="Senha"
 						name="password"
@@ -67,6 +69,7 @@ export default function SighUpPage() {
 						onChange={(e) => handlerInput(e)}
 					/>
 					<Input
+						id="confirmePassword"
 						type="password"
 						placeholder="Confirme sua senha"
 						name="confirmPassword"

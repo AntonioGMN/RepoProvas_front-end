@@ -67,7 +67,7 @@ export default function LoginPage() {
 						onChange={(e) => handlerInput(e)}
 					></Input>
 					<div>
-						<Link to="/signUp">Não possuo cadastro</Link>
+						<Link to="/sighUp">Não possuo cadastro</Link>
 						<button>ENTRAR</button>
 					</div>
 				</Form>
