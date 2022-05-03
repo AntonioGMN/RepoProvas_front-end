@@ -13,12 +13,12 @@ export const Form = styled.form`
 	letter-spacing: 0.15000000596046448px;
 	text-align: left;
 
-	/* div {
+	div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		height: 30px;
-	} */
+	}
 
 	a {
 		color: #4673cacc;

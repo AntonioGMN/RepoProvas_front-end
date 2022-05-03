@@ -7,6 +7,7 @@ import { Form, Input } from "../components/form";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as api from "../services/apiService";
+import { Button } from "@mui/material";
 
 export default function SighUpPage() {
 	const [formData, setFormData] = useState({
@@ -78,7 +79,9 @@ export default function SighUpPage() {
 					/>
 					<div>
 						<Link to="/login">Já possuo cadastro</Link>
-						<button>CADASTRAR</button>
+						<Button variant="contained" type="submit">
+							CADASTRAR
+						</Button>
 					</div>
 				</Form>
 			</Container>

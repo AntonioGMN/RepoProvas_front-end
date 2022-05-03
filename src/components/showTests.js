@@ -34,7 +34,7 @@ export default function ShowTests({
 			<span>
 				{testName}({teacherName})
 			</span>
-			<span>Views: {views}</span>
+			<span id="updateViews">Views: {views}</span>
 		</Box>
 	);
 }

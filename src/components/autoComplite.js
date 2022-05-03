@@ -26,6 +26,7 @@ export default function AutoComplete({ option, title, date, setDate }) {
 
 	return (
 		<Autocomplete
+			id="autoComplete"
 			value={value}
 			onChange={(event, newValue) => {
 				setValue(newValue);
@@ -38,7 +39,11 @@ export default function AutoComplete({ option, title, date, setDate }) {
 			options={option}
 			getOptionLabel={(option) => option.name}
 			renderOption={(props, option) => (
-				<Box component="li" sx={{ "& > img": { mr: 2, flexShrink: 0 } }} {...props}>
+				<Box
+					component="li"
+					sx={{ "& > img": { mr: 2, flexShrink: 0 }, alignItems: "center" }}
+					{...props}
+				>
 					{option.name}
 				</Box>
 			)}

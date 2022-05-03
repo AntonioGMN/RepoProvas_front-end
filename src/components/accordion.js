@@ -24,7 +24,7 @@ export default function SimpleAccordion({
 							{disciplines.map((d) => {
 								if (t.id === d.termId) {
 									return (
-										<Accordion key={d.id}>
+										<Accordion key={d.id} id="diciplina">
 											<AccordionSummary expandIcon={<ExpandMoreIcon />} key={d.id}>
 												<Typography>{d.name}</Typography>
 											</AccordionSummary>
@@ -40,7 +40,7 @@ export default function SimpleAccordion({
 																) {
 																	return (
 																		<ShowTests
-																			key={t.id}
+																			key={test.id}
 																			id={test.id}
 																			testName={test.name}
 																			teacherName={test.teachersDiscipline.teacher.name}

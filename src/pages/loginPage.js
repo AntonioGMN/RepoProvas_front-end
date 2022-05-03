@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as api from "../services/apiService";
 import { useAuth } from "../contexts/AppContext";
+import { Button } from "@mui/material";
 
 export default function LoginPage() {
 	const { persistLogin } = useAuth();
@@ -68,7 +69,9 @@ export default function LoginPage() {
 					></Input>
 					<div>
 						<Link to="/sighUp">Não possuo cadastro</Link>
-						<button>ENTRAR</button>
+						<Button variant="contained" type="submit">
+							ENTRAR
+						</Button>
 					</div>
 				</Form>
 			</Container>
